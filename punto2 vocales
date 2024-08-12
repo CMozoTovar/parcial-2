@@ -1,0 +1,26 @@
+def tiene_dos_o_mas_vocales(cadena):
+    vocales = "aeiouAEIOU"
+    contador = sum(1 for letra in cadena if letra in vocales)
+    return contador >= 2
+
+def main():
+    lista_cadenas = []
+    
+    while True:
+        entrada = input("Ingrese una cadena (o 'fin' para terminar): ")
+        if entrada.lower() == 'fin':
+            break
+        lista_cadenas.append(entrada)
+    
+    existe_cadena = False
+    
+    for cadena in lista_cadenas:
+        if tiene_dos_o_mas_vocales(cadena):
+            print(f"Cadena con dos o más vocales: {cadena}")
+            existe_cadena = True
+    
+    if not existe_cadena:
+        print("No existe")
+        
+if __name__ == "__main__":
+    main()

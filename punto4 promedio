@@ -1,0 +1,27 @@
+def calcular_promedio(arreglo):
+    if len(arreglo) == 0:
+        return 0
+    suma = sum(arreglo)
+    promedio = suma / len(arreglo)
+    return promedio
+
+def main():
+    arreglo = []
+
+    while True:
+        entrada = input("Ingresa un número (o escribe 'promediar' para terminar): ")
+        if entrada.lower() == 'promediar':
+           break
+        try:
+          numero = float(entrada)
+          arreglo.append(numero)
+        except ValueError:
+            print("Entrada no válida. Por favor, ingresa un número.")
+
+    if len(arreglo) > 0:
+        promedio = calcular_promedio(arreglo)
+        print(f"El promedio es: {promedio}")
+    else:
+        print("No se ingresaron números válidos.")
+if __name__ == "__main__":
+    main()

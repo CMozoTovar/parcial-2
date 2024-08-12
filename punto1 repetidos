@@ -1,0 +1,14 @@
+def elementos_repetidos(lista):
+    conjunto = set(lista)
+    return len(conjunto) == len(lista)
+    
+def main():
+    lista = [1,2,3,4,5,6,7,8,9,9]
+    resultado = elementos_repetidos(lista)
+    if resultado:
+        print("la lista no tiene elementos repetidos")
+    else:
+        print("la lista tiene elementos repetidos")
+
+if __name__ == "__main__":
+    main()

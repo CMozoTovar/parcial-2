@@ -1,0 +1,26 @@
+def calcular_mediana(arreglo):
+    # Ordenar el arreglo
+    arreglo_ordenado = sorted(arreglo)
+    
+    # Calcular la longitud del arreglo
+    n = len(arreglo_ordenado)
+    
+    # Determinar la mediana
+    if n % 2 == 1:  # Si el número de elementos es impar
+        mediana = arreglo_ordenado[n // 2]
+    else:  # Si el número de elementos es par
+        medio1 = arreglo_ordenado[n // 2 - 1]
+        medio2 = arreglo_ordenado[n // 2]  
+        mediana = (medio1 + medio2) / 2
+    
+    return mediana
+
+def main():
+    # Ejemplo de uso
+    arreglo = [3, 1, 4, 2, 5]
+
+    mediana = calcular_mediana(arreglo)
+    print(f"La mediana del arreglo es: {mediana}")
+
+if __name__ == "__main__":
+    main()
